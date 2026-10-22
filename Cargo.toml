@@ -1,0 +1,23 @@
+[package]
+name = "uge"
+version = "0.1.0"
+edition = "2021"
+description = "A small Kalshi trading-engine skeleton: scanning, order lifecycle, ledger, telemetry, and a pluggable Strategy trait"
+
+[dependencies]
+ureq = { version = "2", features = ["json"] }
+serde_json = "1"
+rsa = { version = "0.9", features = ["sha2"] }
+sha2 = "0.10"
+base64 = "0.22"
+rand = "0.8"
+chrono = "0.4"
+chrono-tz = "0.9"
+# pricelog.rs gzip-at-rotation. Default features = pure-Rust miniz_oxide backend.
+flate2 = "1"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+opt-level = 2
